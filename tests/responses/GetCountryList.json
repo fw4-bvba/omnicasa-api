@@ -1,0 +1,531 @@
+[{
+  "GetCountryListJsonResult": {
+    "Code": 0,
+    "Message": "",
+    "Success": true,
+    "Value": {
+      "From": 1,
+      "Items": [
+        {
+          "ID": 1,
+          "Name": "Oostenrijk",
+          "Abbr": "A",
+          "Code": "AUT"
+        },
+        {
+          "ID": 2,
+          "Name": "Zuid-afrika",
+          "Abbr": "AFS",
+          "Code": "ZAF"
+        },
+        {
+          "ID": 3,
+          "Name": "Albanie",
+          "Abbr": "ALB",
+          "Code": "ALB"
+        },
+        {
+          "ID": 4,
+          "Name": "Algerije",
+          "Abbr": "ALG",
+          "Code": "DZA"
+        },
+        {
+          "ID": 5,
+          "Name": "Nederlandse antilles",
+          "Abbr": "ANN",
+          "Code": "ANT"
+        },
+        {
+          "ID": 6,
+          "Name": "Verenigde Arabische Emiraten",
+          "Abbr": "ARE",
+          "Code": "ARE"
+        },
+        {
+          "ID": 7,
+          "Name": "Armenie",
+          "Abbr": "ARM",
+          "Code": "ARM"
+        },
+        {
+          "ID": 8,
+          "Name": "Australie",
+          "Abbr": "AUS",
+          "Code": "AUS"
+        },
+        {
+          "ID": 9,
+          "Name": "Azerbeidzjan",
+          "Abbr": "AZE",
+          "Code": "AZE"
+        },
+        {
+          "ID": 10,
+          "Name": "België",
+          "Abbr": "B",
+          "Code": "BEL"
+        },
+        {
+          "ID": 11,
+          "Name": "Wit-rusland",
+          "Abbr": "BER",
+          "Code": "BLR"
+        },
+        {
+          "ID": 12,
+          "Name": "Bulgarije",
+          "Abbr": "BG",
+          "Code": "BGR"
+        },
+        {
+          "ID": 13,
+          "Name": "Bangladesh",
+          "Abbr": "BGD",
+          "Code": "BGD"
+        },
+        {
+          "ID": 14,
+          "Name": "Bosnie-herzegovina",
+          "Abbr": "BOS",
+          "Code": "BIH"
+        },
+        {
+          "ID": 15,
+          "Name": "Brazilie",
+          "Abbr": "BRE",
+          "Code": "BRA"
+        },
+        {
+          "ID": 16,
+          "Name": "Botswana",
+          "Abbr": "BWA",
+          "Code": "BWA"
+        },
+        {
+          "ID": 17,
+          "Name": "Canada",
+          "Abbr": "CAN",
+          "Code": "CAN"
+        },
+        {
+          "ID": 18,
+          "Name": "Zwitserland",
+          "Abbr": "CH",
+          "Code": "CHE"
+        },
+        {
+          "ID": 19,
+          "Name": "China",
+          "Abbr": "CHI",
+          "Code": "CHN"
+        },
+        {
+          "ID": 20,
+          "Name": "Chile",
+          "Abbr": "CL",
+          "Code": "CHL"
+        },
+        {
+          "ID": 21,
+          "Name": "Zuid korea",
+          "Abbr": "COR",
+          "Code": "KOR"
+        },
+        {
+          "ID": 22,
+          "Name": "Kaapverdië",
+          "Abbr": "CPV",
+          "Code": "CPV"
+        },
+        {
+          "ID": 23,
+          "Name": "Costa Rica",
+          "Abbr": "CRI",
+          "Code": "CRI"
+        },
+        {
+          "ID": 24,
+          "Name": "Cyprus",
+          "Abbr": "CY",
+          "Code": "CYP"
+        },
+        {
+          "ID": 25,
+          "Name": "Tsjechische Republiek",
+          "Abbr": "CZ",
+          "Code": "CZE"
+        },
+        {
+          "ID": 26,
+          "Name": "Duitsland",
+          "Abbr": "D",
+          "Code": "DEU"
+        },
+        {
+          "ID": 27,
+          "Name": "Denemarken",
+          "Abbr": "DK",
+          "Code": "DNK"
+        },
+        {
+          "ID": 28,
+          "Name": "Dominicaanse Republiek",
+          "Abbr": "DO",
+          "Code": "DOM"
+        },
+        {
+          "ID": 29,
+          "Name": "Estland",
+          "Abbr": "EE",
+          "Code": "EST"
+        },
+        {
+          "ID": 30,
+          "Name": "Egypte",
+          "Abbr": "EG",
+          "Code": "EGY"
+        },
+        {
+          "ID": 31,
+          "Name": "Ierland",
+          "Abbr": "EIR",
+          "Code": "IRL"
+        },
+        {
+          "ID": 32,
+          "Name": "Spanje",
+          "Abbr": "ESP",
+          "Code": "ESP"
+        },
+        {
+          "ID": 33,
+          "Name": "Frankrijk",
+          "Abbr": "F",
+          "Code": "FRA"
+        },
+        {
+          "ID": 34,
+          "Name": "Finland",
+          "Abbr": "FIN",
+          "Code": "FIN"
+        },
+        {
+          "ID": 35,
+          "Name": "Liechtenstein",
+          "Abbr": "FL",
+          "Code": "LIE"
+        },
+        {
+          "ID": 36,
+          "Name": "Verenigd Koninkrijk",
+          "Abbr": "GB",
+          "Code": "GBR"
+        },
+        {
+          "ID": 37,
+          "Name": "Georgie",
+          "Abbr": "GEO",
+          "Code": "GEO"
+        },
+        {
+          "ID": 38,
+          "Name": "Griekenland",
+          "Abbr": "GR",
+          "Code": "GRC"
+        },
+        {
+          "ID": 39,
+          "Name": "Hongarije",
+          "Abbr": "H",
+          "Code": "HUN"
+        },
+        {
+          "ID": 40,
+          "Name": "Hong kong",
+          "Abbr": "HON",
+          "Code": "HKG"
+        },
+        {
+          "ID": 41,
+          "Name": "Kroatie",
+          "Abbr": "HR",
+          "Code": "HRV"
+        },
+        {
+          "ID": 42,
+          "Name": "Italië",
+          "Abbr": "I",
+          "Code": "ITA"
+        },
+        {
+          "ID": 43,
+          "Name": "Indonesie",
+          "Abbr": "IND",
+          "Code": "IDN"
+        },
+        {
+          "ID": 44,
+          "Name": "Israel",
+          "Abbr": "ISR",
+          "Code": "ISR"
+        },
+        {
+          "ID": 45,
+          "Name": "Japan",
+          "Abbr": "JAP",
+          "Code": "JPN"
+        },
+        {
+          "ID": 46,
+          "Name": "Jordanië",
+          "Abbr": "JOR",
+          "Code": "JOR"
+        },
+        {
+          "ID": 47,
+          "Name": "Kazachstan",
+          "Abbr": "KAZ",
+          "Code": "KAZ"
+        },
+        {
+          "ID": 48,
+          "Name": "Kenia",
+          "Abbr": "KEN",
+          "Code": "KEN"
+        },
+        {
+          "ID": 49,
+          "Name": "Kirgizstan",
+          "Abbr": "KIR",
+          "Code": "KGZ"
+        },
+        {
+          "ID": 50,
+          "Name": "Luxemburg",
+          "Abbr": "L",
+          "Code": "LUX"
+        }
+      ],
+      "RowsCount": 84,
+      "To": 50
+    }
+  }
+},{
+  "GetCountryListJsonResult": {
+    "Code": 0,
+    "Message": "",
+    "Success": true,
+    "Value": {
+      "From": 51,
+      "Items": [
+        {
+          "ID": 51,
+          "Name": "Libanon",
+          "Abbr": "LIB",
+          "Code": "LBN"
+        },
+        {
+          "ID": 52,
+          "Name": "Litouwen",
+          "Abbr": "LT",
+          "Code": "LTU"
+        },
+        {
+          "ID": 53,
+          "Name": "Letland",
+          "Abbr": "LV",
+          "Code": "LVA"
+        },
+        {
+          "ID": 54,
+          "Name": "Macedonie",
+          "Abbr": "MAC",
+          "Code": "MKD"
+        },
+        {
+          "ID": 55,
+          "Name": "Marokko",
+          "Abbr": "MAR",
+          "Code": "MAR"
+        },
+        {
+          "ID": 56,
+          "Name": "Monaco",
+          "Abbr": "MC",
+          "Code": "MCO"
+        },
+        {
+          "ID": 57,
+          "Name": "Madagascar",
+          "Abbr": "MG",
+          "Code": "MDG"
+        },
+        {
+          "ID": 58,
+          "Name": "Moldova",
+          "Abbr": "MOL",
+          "Code": "MDA"
+        },
+        {
+          "ID": 59,
+          "Name": "Montenegro",
+          "Abbr": "MON",
+          "Code": "MNE"
+        },
+        {
+          "ID": 60,
+          "Name": "Malta",
+          "Abbr": "MT",
+          "Code": "MLT"
+        },
+        {
+          "ID": 61,
+          "Name": "Mexico",
+          "Abbr": "MX",
+          "Code": "MEX"
+        },
+        {
+          "ID": 62,
+          "Name": "Noorwegen",
+          "Abbr": "N",
+          "Code": "NOR"
+        },
+        {
+          "ID": 63,
+          "Name": "Nederland",
+          "Abbr": "NL",
+          "Code": "NLD"
+        },
+        {
+          "ID": 64,
+          "Name": "Oezbekistan",
+          "Abbr": "OUZ",
+          "Code": "UZB"
+        },
+        {
+          "ID": 65,
+          "Name": "Portugal",
+          "Abbr": "P",
+          "Code": "PRT"
+        },
+        {
+          "ID": 66,
+          "Name": "Panama",
+          "Abbr": "PA",
+          "Code": "PAN"
+        },
+        {
+          "ID": 67,
+          "Name": "Polen",
+          "Abbr": "PL",
+          "Code": "POL"
+        },
+        {
+          "ID": 68,
+          "Name": "Roemenie",
+          "Abbr": "RO",
+          "Code": "ROU"
+        },
+        {
+          "ID": 69,
+          "Name": "Rusland (g.o.s.)",
+          "Abbr": "RUS",
+          "Code": "RUS"
+        },
+        {
+          "ID": 70,
+          "Name": "Zweden",
+          "Abbr": "SE",
+          "Code": "SWE"
+        },
+        {
+          "ID": 71,
+          "Name": "Servie",
+          "Abbr": "SER",
+          "Code": "SRB"
+        },
+        {
+          "ID": 72,
+          "Name": "Slovenie",
+          "Abbr": "SI",
+          "Code": "SVN"
+        },
+        {
+          "ID": 73,
+          "Name": "Slovakije",
+          "Abbr": "SK",
+          "Code": "SVK"
+        },
+        {
+          "ID": 74,
+          "Name": "Senegal",
+          "Abbr": "SN",
+          "Code": "SEN"
+        },
+        {
+          "ID": 75,
+          "Name": "Taiwan",
+          "Abbr": "TAI",
+          "Code": "TWN"
+        },
+        {
+          "ID": 76,
+          "Name": "Tadzjikistan",
+          "Abbr": "TAZ",
+          "Code": "TJK"
+        },
+        {
+          "ID": 77,
+          "Name": "Thailand",
+          "Abbr": "TH",
+          "Code": "THA"
+        },
+        {
+          "ID": 78,
+          "Name": "Turkije",
+          "Abbr": "TR",
+          "Code": "TUR"
+        },
+        {
+          "ID": 79,
+          "Name": "Tunesie",
+          "Abbr": "TUN",
+          "Code": "TUN"
+        },
+        {
+          "ID": 80,
+          "Name": "Turkmenistan",
+          "Abbr": "TUR",
+          "Code": "TKM"
+        },
+        {
+          "ID": 81,
+          "Name": "Tanzania",
+          "Abbr": "TZA",
+          "Code": "TZA"
+        },
+        {
+          "ID": 82,
+          "Name": "Oekraine",
+          "Abbr": "UKR",
+          "Code": "UKR"
+        },
+        {
+          "ID": 83,
+          "Name": "Verenigde Staten",
+          "Abbr": "USA",
+          "Code": "USA"
+        },
+        {
+          "ID": 84,
+          "Name": "Venezuela",
+          "Abbr": "VE",
+          "Code": "VEN"
+        }
+      ],
+      "RowsCount": 84,
+      "To": 100
+    }
+  }
+}]

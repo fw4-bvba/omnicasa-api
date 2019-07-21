@@ -1,0 +1,8 @@
+{
+  "ValidateCustomerJsonResult": {
+    "Code": 600,
+    "Message": "Error",
+    "Success": false,
+    "Value": null
+  }
+}

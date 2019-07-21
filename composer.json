@@ -1,0 +1,27 @@
+{
+    "name": "fw4/omnicasa-api",
+    "type": "library",
+    "description": "PHP library for implementing the Omnicasa API",
+    "keywords": ["omnicasa", "api", "sdk"],
+    "license": "MIT",
+    "require": {
+        "php": "^7.0",
+        "guzzlehttp/guzzle": "~6.0",
+        "ocramius/package-versions": "^1.4"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^5.5 || ^6.0"
+    },
+    "autoload": {
+        "psr-4": { "Omnicasa\\": "src/" }
+    },
+    "autoload-dev": {
+        "psr-4": { "Omnicasa\\Tests\\": "tests/"}
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit tests/OmnicasaTest"
+    },
+    "config": {
+        "optimize-autoloader": true
+    }
+}
