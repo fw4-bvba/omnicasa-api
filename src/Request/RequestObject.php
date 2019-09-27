@@ -189,7 +189,7 @@ abstract class RequestObject implements \JsonSerializable
                     }
                     if (self::propertyDefinitionIsScalar($name)) $data[$name] = implode(',', $data[$name]);
                 } else if ($this->_data[$name] instanceof \DateTime) {
-                    //$data[$name] = DateEncoder::encode($this->_data[$name]);
+                    $data[$name] = $this->_data[$name]->format('Y-m-d H:i:s');
                 } else {
                     $data[$name] = $this->_data[$name];
                 }
