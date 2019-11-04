@@ -2,7 +2,7 @@
 namespace Omnicasa;
 
 use Omnicasa\Request\General\{GetCategoriesListRequest, GetCityListOfObjectsRequest, GetCityListRequest, GetCountryListRequest, GetDepartmentListRequest, GetDocumentListRequest, GetGeoCityListOfObjectRequest, GetGeographicListRequest, GetOfficeListRequest, GetSiteListRequest, GetTypeOfPropertyListRequest, GetUserListRequest, GetUserRequest, ValidateCustomerRequest};
-use Omnicasa\Request\Property\{GetAppointmentObjectRequest, GetCountPropertiesRequest, GetCountProperties2Request, GetNeighbourhoodListRequest, GetPointOfInterestListRequest, GetPreviousNextOfPropertyRequest, GetPreviousNextOfProperty2Request, GetPropertiesByIDsRequest, GetPropertyListRequest, GetPropertyList2Request, GetPropertyPictureListRequest, GetPropertyRequest, GetProperty2Request};
+use Omnicasa\Request\Property\{GetAppointmentObjectRequest, GetCountPropertiesRequest, GetCountProperties2Request, GetDeletedPropertyIDsRequest, GetNeighbourhoodListRequest, GetPointOfInterestListRequest, GetPreviousNextOfPropertyRequest, GetPreviousNextOfProperty2Request, GetPropertiesByIDsRequest, GetPropertyListRequest, GetPropertyList2Request, GetPropertyPictureListRequest, GetPropertyRequest, GetProperty2Request};
 use Omnicasa\Request\Construction\{GetBuildingListRequest, GetPreviousNextOfProjectRequest, GetProjectListRequest, GetProjectPictureListRequest, GetProjectRequest};
 use Omnicasa\Request\Contact\{CheckDemandLoginRequest, ContactOnMeProjectRequest, ContactOnMeRequest, DemandRegisterRequest, DemandRegister2Request, GetDemandListRequest, GetDemandPersonRequest, GetNumberOfDemandsRequest, RegisterPersonDemandRequest, SaveChangedDemandListRequest, UnsubscribeDemandPersonRequest};
 use Omnicasa\Response\{ListResponseSimple, ListResponsePaginated, Response, ResponseObject};
@@ -205,6 +205,13 @@ final class Omnicasa
         $request = ($params instanceof GetPointOfInterestListRequest) ? $params : new GetPointOfInterestListRequest($params);
         return new ListResponsePaginated($request, $this->getApiAdapter());
     }
+
+	public function getDeletedPropertyIDs($params = []): array
+	{
+		$request = ($params instanceof GetDeletedPropertyIDsRequest) ? $params : new GetDeletedPropertyIDsRequest($params);
+		$response = $this->getApiAdapter()->request($request);
+		return $response;
+	}
 
     // Construction
 
