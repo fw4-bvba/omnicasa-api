@@ -165,11 +165,12 @@ final class Omnicasa
         return $response ? new Response($response) : null;
     }
 
-    public function getPreviousNextOfProperty($params): Response
+    public function getPreviousNextOfProperty($params): ?Response
     {
         if (is_int($params)) $params = ['ID' => $params];
         $request = ($params instanceof GetPreviousNextOfPropertyRequest) ? $params : new GetPreviousNextOfPropertyRequest($params);
-        return new Response($this->getApiAdapter()->request($request));
+        $response = $this->getApiAdapter()->request($request);
+        return $response ? new Response($response) : null;
     }
 
     public function getPropertyPictureList($params = []): ListResponsePaginated
@@ -179,11 +180,12 @@ final class Omnicasa
         return new ListResponsePaginated($request, $this->getApiAdapter());
     }
 
-    public function getPreviousNextOfProperty2($params): Response
+    public function getPreviousNextOfProperty2($params): ?Response
     {
         if (is_int($params)) $params = ['ID' => $params];
         $request = ($params instanceof GetPreviousNextOfProperty2Request) ? $params : new GetPreviousNextOfProperty2Request($params);
-        return new Response($this->getApiAdapter()->request($request));
+        $response = $this->getApiAdapter()->request($request);
+        return $response ? new Response($response) : null;
     }
 
     public function getAppointmentObject($params = []): ListResponseSimple
@@ -241,11 +243,12 @@ final class Omnicasa
         return new ListResponsePaginated($request, $this->getApiAdapter());
     }
 
-    public function getPreviousNextOfProject($params): Response
+    public function getPreviousNextOfProject($params): ?Response
     {
         if (is_int($params)) $params = ['ID' => $params];
         $request = ($params instanceof GetPreviousNextOfProjectRequest) ? $params : new GetPreviousNextOfProjectRequest($params);
-        return new Response($this->getApiAdapter()->request($request));
+        $response = $this->getApiAdapter()->request($request);
+        return $response ? new Response($response) : null;
     }
 
     // Contact
@@ -274,11 +277,12 @@ final class Omnicasa
         return $this->getApiAdapter()->request($request);
     }
 
-    public function getDemandPerson($params): Response
+    public function getDemandPerson($params): ?Response
     {
         if (is_int($params)) $params = ['ID' => $params];
         $request = ($params instanceof GetDemandPersonRequest) ? $params : new GetDemandPersonRequest($params);
-        return new Response($this->getApiAdapter()->request($request));
+        $response = $this->getApiAdapter()->request($request);
+        return $response ? new Response($response) : null;
     }
 
     public function unsubscribeDemandPerson($params): bool
