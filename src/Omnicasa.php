@@ -1,11 +1,98 @@
 <?php
 namespace Omnicasa;
 
-use Omnicasa\Request\General\{GetCategoriesListRequest, GetCityListOfObjectsRequest, GetCityListRequest, GetCountryListRequest, GetDepartmentListRequest, GetDocumentListRequest, GetGeoCityListOfObjectRequest, GetGeographicListRequest, GetOfficeListRequest, GetSiteListRequest, GetTypeOfPropertyListRequest, GetUserListRequest, GetUserRequest, ValidateCustomerRequest};
-use Omnicasa\Request\Property\{GetAppointmentObjectRequest, GetCountPropertiesRequest, GetCountProperties2Request, GetDeletedPropertyIDsRequest, GetNeighbourhoodListRequest, GetPointOfInterestListRequest, GetPreviousNextOfPropertyRequest, GetPreviousNextOfProperty2Request, GetPropertiesByIDsRequest, GetPropertyListRequest, GetPropertyList2Request, GetPropertyPictureListRequest, GetPropertyRequest, GetProperty2Request};
-use Omnicasa\Request\Construction\{GetBuildingListRequest, GetPreviousNextOfProjectRequest, GetProjectListRequest, GetProjectPictureListRequest, GetProjectRequest};
-use Omnicasa\Request\Contact\{CheckDemandLoginRequest, ContactOnMeProjectRequest, ContactOnMeRequest, DemandRegisterRequest, DemandRegister2Request, GetDemandListRequest, GetDemandPersonRequest, GetNumberOfDemandsRequest, RegisterPersonDemandRequest, SaveChangedDemandListRequest, UnsubscribeDemandPersonRequest};
-use Omnicasa\Response\{ListResponseSimple, ListResponsePaginated, Response, ResponseObject};
+use Omnicasa\Request\General\{
+    GetCategoriesListRequest,
+    GetCityListOfObjectsRequest,
+    GetCityListRequest,
+    GetCountryListRequest,
+    GetDepartmentListRequest,
+    GetDocumentListRequest,
+    GetGeoCityListOfObjectRequest,
+    GetGeographicListRequest,
+    GetOfficeListRequest,
+    GetSiteListRequest,
+    GetTypeOfPropertyListRequest,
+    GetUserListRequest,
+    GetUserRequest,
+    ValidateCustomerRequest
+};
+use Omnicasa\Request\Property\{
+    GetAppointmentObjectRequest,
+    GetCountPropertiesRequest,
+    GetCountProperties2Request,
+    GetDeletedPropertyIDsRequest,
+    GetNeighbourhoodListRequest,
+    GetPointOfInterestListRequest,
+    GetPreviousNextOfPropertyRequest,
+    GetPreviousNextOfProperty2Request,
+    GetPropertiesByIDsRequest,
+    GetPropertyListRequest,
+    GetPropertyList2Request,
+    GetPropertyPictureListRequest,
+    GetPropertyRequest,
+    GetProperty2Request
+};
+use Omnicasa\Request\Construction\{
+    GetBuildingListRequest,
+    GetPreviousNextOfProjectRequest,
+    GetProjectListRequest,
+    GetProjectPictureListRequest,
+    GetProjectRequest
+};
+use Omnicasa\Request\Contact\{
+    CheckDemandLoginRequest,
+    ContactOnMeProjectRequest,
+    ContactOnMeRequest,
+    DemandRegisterRequest,
+    DemandRegister2Request,
+    GetDemandListRequest,
+    GetDemandPersonRequest,
+    GetNumberOfDemandsRequest,
+    RegisterPersonDemandRequest,
+    SaveChangedDemandListRequest,
+    UnsubscribeDemandPersonRequest
+};
+use Omnicasa\Request\Owner\{
+	AddPersonToAppointmentRequest,
+    CheckPersonLoginRequest,
+    CheckPersonLoginMultiOfficeRequest,
+    CreateHistoryRequest,
+    CreateTaskRequest,
+    GetAppearanceHistoriesRequest,
+    GetAppointmentOfStatisticsGraphListRequest,
+    GetAutomaticHistoriesRequest,
+    GetCalendarHistoriesRequest,
+    GetCandidateListRequest,
+    GetHistoriesTypeRequest,
+    GetManyVisitStatisticsOfPropertyRequest,
+    GetMatchingStatisticOfPropertyRequest,
+    GetMediaAllPropertyTypesStatisticsGraphListRequest,
+	GetMediaObjectStatisticsGraphListRequest,
+    GetMediaOnlineHistoriesRequest,
+    GetOwnerListRequest,
+    GetPersonByEmailRequest,
+    GetPersonCountRequest,
+    GetPersonForgetPasswordRequest,
+    GetPersonListRequest,
+    GetPersonRelationsRequest,
+    GetPersonRequest,
+    GetPersonSourceListRequest,
+    GetPropertyCheckListRequest,
+    GetRelatedPropertiesRequest,
+    GetRelationListRequest,
+    GetSummaryMediaObjectStatisticsGraphListRequest,
+    GetTaskHistoriesRequest,
+    GetVisitStatisticOfPropertyRequest,
+    MakeRelationRequest,
+    RegisterPersonRequest
+};
+use Omnicasa\Response\{
+    ListResponseSimple,
+    ListResponsePaginated,
+    Response,
+    ResponseObject
+};
 
 final class Omnicasa
 {
@@ -320,6 +407,222 @@ final class Omnicasa
     {
         $request = ($params instanceof RegisterPersonDemandRequest) ? $params : new RegisterPersonDemandRequest($params);
         return new Response($this->getApiAdapter()->request($request));
+    }
+    
+    // Owner login
+
+    public function registerPerson($params): int
+    {
+        $request = ($params instanceof RegisterPersonRequest) ? $params : new RegisterPersonRequest($params);
+        return intval($this->getApiAdapter()->request($request));
+    }
+
+    public function getPerson($params): ?Response
+    {
+        if (is_int($params)) $params = ['ID' => $params];
+        else if (is_string($params)) $params = ['Email' => $params];
+        $request = ($params instanceof GetPersonRequest) ? $params : new GetPersonRequest($params);
+        $response = $this->getApiAdapter()->request($request);
+        return $response ? new Response($response) : null;
+    }
+
+    public function checkPersonLogin($params): int
+    {
+        $request = ($params instanceof CheckPersonLoginRequest) ? $params : new CheckPersonLoginRequest($params);
+        return intval($this->getApiAdapter()->request($request));
+    }
+
+    public function checkPersonLoginMultiOffice($params): Response
+    {
+        $request = ($params instanceof CheckPersonLoginMultiOfficeRequest) ? $params : new CheckPersonLoginMultiOfficeRequest($params);
+        return new Response($this->getApiAdapter()->request($request));
+    }
+
+    public function getPersonForgetPassword($params): string
+    {
+        if (is_string($params)) $params = ['Email' => $params];
+        $request = ($params instanceof GetPersonForgetPasswordRequest) ? $params : new GetPersonForgetPasswordRequest($params);
+        return $this->getApiAdapter()->request($request);
+    }
+
+    public function getPersonList($params = []): ListResponsePaginated
+    {
+        $request = ($params instanceof GetPersonListRequest) ? $params : new GetPersonListRequest($params);
+        return new ListResponsePaginated($request, $this->getApiAdapter());
+    }
+
+    public function getPersonCount($params = []): int
+    {
+        $request = ($params instanceof GetPersonCountRequest) ? $params : new GetPersonCountRequest($params);
+        return intval($this->getApiAdapter()->request($request));
+    }
+
+    public function getAppearanceHistories($params = []): ListResponsePaginated
+    {
+        if (is_int($params)) $params = ['ObjectID' => $params];
+        $request = ($params instanceof GetAppearanceHistoriesRequest) ? $params : new GetAppearanceHistoriesRequest($params);
+        return new ListResponsePaginated($request, $this->getApiAdapter());
+    }
+
+    public function getAutomaticHistories($params = []): ListResponsePaginated
+    {
+        if (is_int($params)) $params = ['ObjectID' => $params];
+        $request = ($params instanceof GetAutomaticHistoriesRequest) ? $params : new GetAutomaticHistoriesRequest($params);
+        return new ListResponsePaginated($request, $this->getApiAdapter());
+    }
+
+    public function getCalendarHistories($params = []): ListResponsePaginated
+    {
+        if (is_int($params)) $params = ['ObjectID' => $params];
+        $request = ($params instanceof GetCalendarHistoriesRequest) ? $params : new GetCalendarHistoriesRequest($params);
+        return new ListResponsePaginated($request, $this->getApiAdapter());
+    }
+
+    public function getMediaOnlineHistories($params = []): ListResponsePaginated
+    {
+        if (is_int($params)) $params = ['ObjectID' => $params];
+        $request = ($params instanceof GetMediaOnlineHistoriesRequest) ? $params : new GetMediaOnlineHistoriesRequest($params);
+        return new ListResponsePaginated($request, $this->getApiAdapter());
+    }
+
+    public function getTaskHistories($params = []): ListResponsePaginated
+    {
+        if (is_int($params)) $params = ['ObjectID' => $params];
+        $request = ($params instanceof GetTaskHistoriesRequest) ? $params : new GetTaskHistoriesRequest($params);
+        return new ListResponsePaginated($request, $this->getApiAdapter());
+    }
+
+    public function getVisitStatisticOfProperty($params): Response
+    {
+        if (is_int($params)) $params = ['ID' => $params];
+        $request = ($params instanceof GetVisitStatisticOfPropertyRequest) ? $params : new GetVisitStatisticOfPropertyRequest($params);
+        return new Response($this->getApiAdapter()->request($request));
+    }
+
+    public function getHistoriesType($params = []): ListResponsePaginated
+    {
+        $request = ($params instanceof GetHistoriesTypeRequest) ? $params : new GetHistoriesTypeRequest($params);
+        return new ListResponsePaginated($request, $this->getApiAdapter());
+    }
+
+    public function createHistory($params): int
+    {
+        $request = ($params instanceof CreateHistoryRequest) ? $params : new CreateHistoryRequest($params);
+        return intval($this->getApiAdapter()->request($request));
+    }
+
+    public function getRelatedProperties($params): ListResponsePaginated
+    {
+        if (is_string($params)) $params = ['Email' => $params];
+        $request = ($params instanceof GetRelatedPropertiesRequest) ? $params : new GetRelatedPropertiesRequest($params);
+        return new ListResponsePaginated($request, $this->getApiAdapter());
+    }
+
+    public function getPersonByEmail($params): ?Response
+    {
+        if (is_int($params)) $params = ['ID' => $params];
+        else if (is_string($params)) $params = ['Email' => $params];
+        $request = ($params instanceof GetPersonByEmailRequest) ? $params : new GetPersonByEmailRequest($params);
+        $response = $this->getApiAdapter()->request($request);
+        return $response ? new Response($response) : null;
+    }
+
+    public function getPersonRelations($params): Response
+    {
+        if (is_string($params)) $params = ['Email' => $params];
+        $request = ($params instanceof GetPersonRelationsRequest) ? $params : new GetPersonRelationsRequest($params);
+        return new Response($this->getApiAdapter()->request($request));
+    }
+
+    public function makeRelation($params): int
+    {
+        $request = ($params instanceof MakeRelationRequest) ? $params : new MakeRelationRequest($params);
+        return intval($this->getApiAdapter()->request($request));
+    }
+
+	public function addPersonToAppointment($params): int
+	{
+		$request = ($params instanceof AddPersonToAppointmentRequest) ? $params : new AddPersonToAppointmentRequest($params);
+		return intval($this->getApiAdapter()->request($request));
+	}
+
+	public function getMediaObjectStatisticsGraphList($params = []): ListResponsePaginated
+	{
+		$request = ($params instanceof GetMediaObjectStatisticsGraphListRequest) ? $params : new GetMediaObjectStatisticsGraphListRequest($params);
+		return new ListResponsePaginated($request, $this->getApiAdapter());
+	}
+
+	public function getMediaAllPropertyTypesStatisticsGraphList($params = []): ListResponsePaginated
+	{
+		$request = ($params instanceof GetMediaAllPropertyTypesStatisticsGraphListRequest) ? $params : new GetMediaAllPropertyTypesStatisticsGraphListRequest($params);
+		return new ListResponsePaginated($request, $this->getApiAdapter());
+	}
+
+    public function getManyVisitStatisticsOfProperty($params): ListResponseSimple
+    {
+        if (is_int($params)) $params = ['ID' => $params];
+        $request = ($params instanceof GetManyVisitStatisticsOfPropertyRequest) ? $params : new GetManyVisitStatisticsOfPropertyRequest($params);
+        return new ListResponseSimple($this->getApiAdapter()->request($request));
+    }
+
+    public function getMatchingStatisticOfProperty($params): ?Response
+    {
+        if (is_int($params)) $params = ['ID' => $params];
+        $request = ($params instanceof GetMatchingStatisticOfPropertyRequest) ? $params : new GetMatchingStatisticOfPropertyRequest($params);
+        $response = $this->getApiAdapter()->request($request);
+        return $response ? new Response($response) : null;
+    }
+
+    public function getSummaryMediaObjectStatisticsGraphList($params = []): ListResponseSimple
+    {
+        $request = ($params instanceof GetSummaryMediaObjectStatisticsGraphListRequest) ? $params : new GetSummaryMediaObjectStatisticsGraphListRequest($params);
+        return new ListResponseSimple($this->getApiAdapter()->request($request));
+    }
+
+    public function getAppointmentOfStatisticsGraphList($params = []): ListResponseSimple
+    {
+        $request = ($params instanceof GetAppointmentOfStatisticsGraphListRequest) ? $params : new GetAppointmentOfStatisticsGraphListRequest($params);
+        var_dump($this->getApiAdapter()->request($request));
+        return new ListResponseSimple($this->getApiAdapter()->request($request));
+    }
+
+    public function getOwnerList($params = []): ListResponsePaginated
+    {
+        $request = ($params instanceof GetOwnerListRequest) ? $params : new GetOwnerListRequest($params);
+        return new ListResponsePaginated($request, $this->getApiAdapter());
+    }
+
+    public function getPersonSourceList($params = []): ListResponsePaginated
+    {
+        $request = ($params instanceof GetPersonSourceListRequest) ? $params : new GetPersonSourceListRequest($params);
+        return new ListResponsePaginated($request, $this->getApiAdapter());
+    }
+
+    public function createTask($params): int
+    {
+        $request = ($params instanceof CreateTaskRequest) ? $params : new CreateTaskRequest($params);
+        return intval($this->getApiAdapter()->request($request));
+    }
+
+    public function getCandidateList($params): ListResponsePaginated
+    {
+        if (is_int($params)) $params = ['ObjectID' => $params];
+        $request = ($params instanceof GetCandidateListRequest) ? $params : new GetCandidateListRequest($params);
+        return new ListResponsePaginated($request, $this->getApiAdapter());
+    }
+
+    public function getRelationList($params = []): ListResponsePaginated
+    {
+        if (is_int($params)) $params = ['ObjectID' => $params];
+        $request = ($params instanceof GetRelationListRequest) ? $params : new GetRelationListRequest($params);
+        return new ListResponsePaginated($request, $this->getApiAdapter());
+    }
+
+    public function getPropertyCheckList($params = []): ListResponsePaginated
+    {
+        if (is_int($params)) $params = ['ObjectID' => $params];
+        $request = ($params instanceof GetPropertyCheckListRequest) ? $params : new GetPropertyCheckListRequest($params);
+        return new ListResponsePaginated($request, $this->getApiAdapter());
     }
 
     // API adapter
