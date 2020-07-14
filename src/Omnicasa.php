@@ -38,7 +38,8 @@ use Omnicasa\Request\Construction\{
     GetPreviousNextOfProjectRequest,
     GetProjectListRequest,
     GetProjectPictureListRequest,
-    GetProjectRequest
+    GetProjectRequest,
+    GetDeletedProjectIDsRequest
 };
 use Omnicasa\Request\Contact\{
     CheckDemandLoginRequest,
@@ -336,6 +337,13 @@ final class Omnicasa
         $request = ($params instanceof GetPreviousNextOfProjectRequest) ? $params : new GetPreviousNextOfProjectRequest($params);
         $response = $this->getApiAdapter()->request($request);
         return $response ? new Response($response) : null;
+    }
+    
+    public function getDeletedProjectIDs($params = []): array
+    {
+        $request = ($params instanceof GetDeletedProjectIDsRequest) ? $params : new GetDeletedProjectIDsRequest($params);
+        $response = $this->getApiAdapter()->request($request);
+        return $response;
     }
 
     // Contact
