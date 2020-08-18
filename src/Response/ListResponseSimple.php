@@ -20,6 +20,11 @@ class ListResponseSimple extends ListResponse
     {
         return $this->items[$position];
     }
+    
+    public function __debugInfo(): array
+    {
+        return $this->items;
+    }
 
     /* Countable implementation */
 
