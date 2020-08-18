@@ -88,6 +88,11 @@ use Omnicasa\Request\Owner\{
     MakeRelationRequest,
     RegisterPersonRequest
 };
+use Omnicasa\Request\Internal\{
+    GetInternalPropertyListRequest,
+    GetInternalProjectListRequest,
+    GetInternalAllLookupTablesRequest
+};
 use Omnicasa\Response\{
     ListResponseSimple,
     ListResponsePaginated,
@@ -590,7 +595,6 @@ final class Omnicasa
     public function getAppointmentOfStatisticsGraphList($params = []): ListResponseSimple
     {
         $request = ($params instanceof GetAppointmentOfStatisticsGraphListRequest) ? $params : new GetAppointmentOfStatisticsGraphListRequest($params);
-        var_dump($this->getApiAdapter()->request($request));
         return new ListResponseSimple($this->getApiAdapter()->request($request));
     }
 
@@ -631,6 +635,48 @@ final class Omnicasa
         if (is_int($params)) $params = ['ObjectID' => $params];
         $request = ($params instanceof GetPropertyCheckListRequest) ? $params : new GetPropertyCheckListRequest($params);
         return new ListResponsePaginated($request, $this->getApiAdapter());
+    }
+    
+    // Internal
+    
+    public function getInternalPropertyList($params = []): ListResponsePaginated
+    {
+        $request = ($params instanceof GetInternalPropertyListRequest) ? $params : new GetInternalPropertyListRequest($params);
+        return new ListResponsePaginated($request, $this->getApiAdapter());
+    }
+    
+    public function getInternalProjectList($params = []): ListResponsePaginated
+    {
+        $request = ($params instanceof GetInternalProjectListRequest) ? $params : new GetInternalProjectListRequest($params);
+        return new ListResponsePaginated($request, $this->getApiAdapter());
+    }
+    
+    public function getInternalAllLookupTables($table_names): ?array
+    {
+        if (is_array($table_names)) $table_names = implode(',', $table_names);
+        
+        $request = new GetInternalAllLookupTablesRequest(['TableNames' => strval($table_names)]);
+        $response = $this->getApiAdapter()->request($request);
+        
+        if (empty($response)) {
+            return null; 
+        }
+        
+        // Decode response
+        $response = json_decode($response);
+        if (empty($response)) {
+            return null;
+        }
+        
+        $result = [];
+        foreach ($response as $table) {
+            foreach ($table as $internal_table_name => $table_values) {
+                $internal_table_name = preg_replace('/^Internal/i', '', $internal_table_name);
+                $result[$internal_table_name] = new ListResponseSimple($table_values);
+            }
+        }
+        
+        return $result;
     }
 
     // API adapter
