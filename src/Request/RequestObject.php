@@ -80,7 +80,7 @@ abstract class RequestObject implements \JsonSerializable
     {
         $data = [];
         foreach (self::getCachedPropertyDefinitions() as $name => $type) {
-            if (isset($this->_data[$name])) $data[$name] = $this->_data[$name];
+            if (array_key_exists($name, $this->_data)) $data[$name] = $this->_data[$name];
         }
         return $data;
     }
