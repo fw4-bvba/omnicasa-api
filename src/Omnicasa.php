@@ -17,6 +17,10 @@ use Omnicasa\Request\General\{
     GetUserRequest,
     ValidateCustomerRequest
 };
+use Omnicasa\Request\Settings\{
+    GetStatusListRequest,
+    GetSubstatusListRequest
+};
 use Omnicasa\Request\Property\{
     GetAppointmentObjectRequest,
     GetCountPropertiesRequest,
@@ -208,6 +212,20 @@ final class Omnicasa
         return new ListResponseSimple($response);
     }
 
+    // Settings
+
+    public function getStatusList($params = []): ListResponsePaginated
+    {
+        $request = ($params instanceof GetStatusListRequest) ? $params : new GetStatusListRequest($params);
+        return new ListResponsePaginated($request, $this->getApiAdapter());
+    }
+
+    public function getSubstatusList($params = []): ListResponsePaginated
+    {
+        $request = ($params instanceof GetSubstatusListRequest) ? $params : new GetSubstatusListRequest($params);
+        return new ListResponsePaginated($request, $this->getApiAdapter());
+    }
+
     // Property
 
     public function getCountProperties($params = []): ?array
@@ -343,7 +361,7 @@ final class Omnicasa
         $response = $this->getApiAdapter()->request($request);
         return $response ? new Response($response) : null;
     }
-    
+
     public function getDeletedProjectIDs($params = []): array
     {
         $request = ($params instanceof GetDeletedProjectIDsRequest) ? $params : new GetDeletedProjectIDsRequest($params);
@@ -421,7 +439,7 @@ final class Omnicasa
         $request = ($params instanceof RegisterPersonDemandRequest) ? $params : new RegisterPersonDemandRequest($params);
         return new Response($this->getApiAdapter()->request($request));
     }
-    
+
     // Owner login
 
     public function registerPerson($params): int
@@ -636,38 +654,38 @@ final class Omnicasa
         $request = ($params instanceof GetPropertyCheckListRequest) ? $params : new GetPropertyCheckListRequest($params);
         return new ListResponsePaginated($request, $this->getApiAdapter());
     }
-    
+
     // Internal
-    
+
     public function getInternalPropertyList($params = []): ListResponsePaginated
     {
         $request = ($params instanceof GetInternalPropertyListRequest) ? $params : new GetInternalPropertyListRequest($params);
         return new ListResponsePaginated($request, $this->getApiAdapter());
     }
-    
+
     public function getInternalProjectList($params = []): ListResponsePaginated
     {
         $request = ($params instanceof GetInternalProjectListRequest) ? $params : new GetInternalProjectListRequest($params);
         return new ListResponsePaginated($request, $this->getApiAdapter());
     }
-    
+
     public function getInternalAllLookupTables($table_names): ?array
     {
         if (is_array($table_names)) $table_names = implode(',', $table_names);
-        
+
         $request = new GetInternalAllLookupTablesRequest(['TableNames' => strval($table_names)]);
         $response = $this->getApiAdapter()->request($request);
-        
+
         if (empty($response)) {
-            return null; 
+            return null;
         }
-        
+
         // Decode response
         $response = json_decode($response);
         if (empty($response)) {
             return null;
         }
-        
+
         $result = [];
         foreach ($response as $table) {
             foreach ($table as $internal_table_name => $table_values) {
@@ -675,7 +693,7 @@ final class Omnicasa
                 $result[$internal_table_name] = new ListResponseSimple($table_values);
             }
         }
-        
+
         return $result;
     }
 
