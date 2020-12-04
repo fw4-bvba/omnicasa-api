@@ -19,7 +19,8 @@ use Omnicasa\Request\General\{
 };
 use Omnicasa\Request\Settings\{
     GetStatusListRequest,
-    GetSubstatusListRequest
+    GetSubstatusListRequest,
+    GetWebIDListRequest
 };
 use Omnicasa\Request\Property\{
     GetAppointmentObjectRequest,
@@ -223,6 +224,12 @@ final class Omnicasa
     public function getSubstatusList($params = []): ListResponsePaginated
     {
         $request = ($params instanceof GetSubstatusListRequest) ? $params : new GetSubstatusListRequest($params);
+        return new ListResponsePaginated($request, $this->getApiAdapter());
+    }
+
+    public function getWebIDList($params = []): ListResponsePaginated
+    {
+        $request = ($params instanceof GetWebIDListRequest) ? $params : new GetWebIDListRequest($params);
         return new ListResponsePaginated($request, $this->getApiAdapter());
     }
 

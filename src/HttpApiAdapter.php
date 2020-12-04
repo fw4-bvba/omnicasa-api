@@ -17,7 +17,11 @@ final class HttpApiAdapter extends ApiAdapter
     {
         $version = \PackageVersions\Versions::getVersion('fw4/omnicasa-api');
 
-        $parameters = array_merge($this->defaultParams, $request->jsonSerialize());
+        $parameters = $request->jsonSerialize();
+        foreach ($this->defaultParams as $name => $value) {
+            if ($request->accepts($name) && !isset($parameters[$name])) $parameters[$name] = $value;
+        }
+
         $method = defined(get_class($request) . '::METHOD') ? $request::METHOD : 'GET';
         $service = defined(get_class($request) . '::SERVICE') ? $request::SERVICE : ApiService::OMNICASA;
         $options = [

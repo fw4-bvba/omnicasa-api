@@ -85,6 +85,12 @@ abstract class RequestObject implements \JsonSerializable
         return $data;
     }
 
+    public function accepts(string $property): bool
+    {
+        $index = strtolower($property);
+        return in_array($index, ['customername', 'customerpassword']) || !empty(self::$_propertyIndex[static::class][$index]);
+    }
+
     /* Static methods */
 
     protected static function initStatic()
