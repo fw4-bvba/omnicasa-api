@@ -720,7 +720,7 @@ final class Omnicasa
         $this->apiAdapter = $api_adapter;
     }
 
-    protected function getApiAdapter(): ApiAdapterInterface
+    public function getApiAdapter(): ApiAdapterInterface
     {
         if (empty($this->apiAdapter)) {
             $this->setApiAdapter(new HttpApiAdapter());
