@@ -5,7 +5,7 @@ use Omnicasa\Request\Request;
 
 class GetSiteListRequest extends Request
 {
-    const ENDPOINT = 'GetOfficeList';
+    const ENDPOINT = 'GetSiteList';
 
     const PROPERTIES = [
         'IDs'           => ['integer'],
