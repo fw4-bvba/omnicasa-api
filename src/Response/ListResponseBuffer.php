@@ -54,7 +54,6 @@ final class ListResponseBuffer
         }
 
         $this->buffer = [];
-        $this->current = 0;
         $this->rowCount = $response->RowsCount;
         foreach ($response->Items as $row) {
             $this->buffer[] = new ResponseObject($row);
