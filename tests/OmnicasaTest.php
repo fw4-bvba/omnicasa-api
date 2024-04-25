@@ -9,6 +9,7 @@ use PHPUnit\Framework\TestCase;
 class OmnicasaTest extends TestCase
 {
     protected $api;
+    protected $adapter;
 
     protected function setUp(): void
     {
