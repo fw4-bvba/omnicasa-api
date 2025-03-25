@@ -20,17 +20,24 @@ class ResponseObject implements \JsonSerializable
     {
         if (is_object($value)) {
             return new self($value);
-        } else if (is_array($value)) {
+        } elseif (is_array($value)) {
             $result = [];
-            foreach ($value as &$subvalue) $result[] = $this->parseValue($subvalue);
+            foreach ($value as &$subvalue) {
+                $result[] = $this->parseValue($subvalue);
+            }
             return $result;
-        } else if (isset($property) && is_string($value) && (strpos($property, 'Date') === strlen($property) - 4 || strpos($property, 'Date') === 0)) {
-            if ($date = \DateTime::createFromFormat('Y-m-d H:i:s', $value)) return $date;
-            else return null;
-        } else if (is_string($value) && substr($value, 0, 6) === '/Date(' && preg_match('/^\/Date\((\d{10})(?:\d{3})([\+\-]\d{4})?\)\/$/', $value, $match)) {
+        } elseif (is_string($value) && substr($value, 0, 6) === '/Date(' && preg_match('/^\/Date\((\d{10})(?:\d{3})([\+\-]\d{4})?\)\/$/', $value, $match)) {
             $date = new \DateTime('@' . $match[1]);
-            if (!empty($match[2])) $date->setTimezone(new \DateTimeZone($match[2]));
+            if (!empty($match[2])) {
+                $date->setTimezone(new \DateTimeZone($match[2]));
+            }
             return $date;
+        } elseif (isset($property) && is_string($value) && (strpos($property, 'Date') === strlen($property) - 4 || strpos($property, 'Date') === 0)) {
+            if ($date = \DateTime::createFromFormat('Y-m-d H:i:s', $value)) {
+                return $date;
+            } else {
+                return null;
+            }
         } else {
             return $value;
         }
