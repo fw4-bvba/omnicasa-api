@@ -8,9 +8,11 @@ class GetVisitStatisticOfPropertyRequest extends Request
     const ENDPOINT = 'GetVisitStatisticOfProperty';
 
     const PROPERTIES = [
-        'ID'            => 'integer',
-        'DisplayFields' => ['string'],
-        'LanguageId'    => 'integer',
-        'OfficeID'      => 'integer',
+        'ID'                 => 'integer',
+        'DisplayFields'      => ['string'],
+        'LanguageId'         => 'integer',
+        'OfficeID'           => 'integer',
+        'IncludeUnits'       => 'boolean',
+        'IncludedNotPublish' => 'boolean',
     ];
 }

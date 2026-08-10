@@ -8,18 +8,20 @@ class GetTaskHistoriesRequest extends Request
     const ENDPOINT = 'GetTaskHistories';
 
     const PROPERTIES = [
-        'ObjectID'      => 'integer',
-        'ProjectID'     => 'integer',
-        'PersonIDs'     => ['integer'],
-        'FromDate'      => 'DateTime',
-        'ToDate'        => 'DateTime',
-        'TypeIDs'       => ['integer'],
-        'IncludeUnits'  => 'boolean',
-        'DisplayFields' => ['string'],
-        'SortFields'    => ['string'],
-        'Limit1'        => 'integer',
-        'Limit2'        => 'integer',
-        'LanguageId'    => 'integer',
-        'OfficeID'      => 'integer',
+        'ObjectID'           => 'integer',
+        'ProjectID'          => 'integer',
+        'PersonIDs'          => ['integer'],
+        'FromDate'           => 'DateTime',
+        'ToDate'             => 'DateTime',
+        'TypeIDs'            => ['integer'],
+        'IncludeUnits'       => 'boolean',
+        'DisplayFields'      => ['string'],
+        'SortFields'         => ['string'],
+        'Limit1'             => 'integer',
+        'Limit2'             => 'integer',
+        'LanguageId'         => 'integer',
+        'OfficeID'           => 'integer',
+        'ExcludeFromReport'  => 'boolean',
+        'IncludedNotPublish' => 'boolean',
     ];
 }

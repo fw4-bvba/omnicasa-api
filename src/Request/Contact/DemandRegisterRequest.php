@@ -67,5 +67,15 @@ class DemandRegisterRequest extends Request
         'RegionIds'               => ['integer'],
         'LanguageId'              => 'integer',
         'OfficeID'                => 'integer',
+        'ConditionIDs'            => ['integer'],
+        'ConstructionClosed'      => 'boolean',
+        'ConstructionOpen'        => 'boolean',
+        'ConstructionSemiOpen'    => 'boolean',
+        'IncludeUnits'            => 'boolean',
+        'IncludedNotPublish'      => 'boolean',
+        'IsFurnished'             => 'boolean',
+        'ManagerId'               => 'integer',
+        'MarketingTracking'       => 'Omnicasa\Request\Contact\MarketingTrackingParameters',
+        'OnlyNewConstruction'     => 'boolean',
     ];
 }

@@ -25,5 +25,9 @@ class GetPropertyRequest extends Request
         'DisplayFields'                => ['string'],
         'LanguageId'                   => 'integer',
         'OfficeID'                     => 'integer',
+        'AddCostField'                 => 'boolean',
+        'IncludeUnits'                 => 'boolean',
+        'IncludedNotPublish'           => 'boolean',
+        'SortCostFields'               => ['string'],
     ];
 }

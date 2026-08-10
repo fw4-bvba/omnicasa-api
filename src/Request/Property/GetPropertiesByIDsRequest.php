@@ -8,10 +8,12 @@ class GetPropertiesByIDsRequest extends Request
     const ENDPOINT = 'GetPropertiesByIDs';
 
     const PROPERTIES = [
-        'IDs'           => ['integer'],
-        'DisplayFields' => ['string'],
-        'StatusList'    => ['integer'],
-        'LanguageId'    => 'integer',
-        'OfficeID'      => 'integer',
+        'IDs'                => ['integer'],
+        'DisplayFields'      => ['string'],
+        'StatusList'         => ['integer'],
+        'LanguageId'         => 'integer',
+        'OfficeID'           => 'integer',
+        'IncludeUnits'       => 'boolean',
+        'IncludedNotPublish' => 'boolean',
     ];
 }

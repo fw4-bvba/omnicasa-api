@@ -8,11 +8,13 @@ class UnsubscribeDemandPersonRequest extends Request
     const ENDPOINT = 'UnsubscribeDemandPerson';
 
     const PROPERTIES = [
-        'ID'              => 'integer',
-        'DemandID'        => 'integer',
-        'PersonIDEncrypt' => 'string',
-        'DemandIDEncrypt' => 'string',
-        'LanguageId'      => 'integer',
-        'OfficeID'        => 'integer',
+        'ID'                 => 'integer',
+        'DemandID'           => 'integer',
+        'PersonIDEncrypt'    => 'string',
+        'DemandIDEncrypt'    => 'string',
+        'LanguageId'         => 'integer',
+        'OfficeID'           => 'integer',
+        'IncludeUnits'       => 'boolean',
+        'IncludedNotPublish' => 'boolean',
     ];
 }

@@ -8,11 +8,13 @@ class CheckDemandLoginRequest extends Request
     const ENDPOINT = 'CheckDemandLogin';
 
     const PROPERTIES = [
-        'Email'         => 'string',
-        'Password'      => 'string',
-        'FaceBookID'    => 'string',
-        'IsProprietors' => 'boolean',
-        'LanguageId'    => 'integer',
-        'OfficeID'      => 'integer',
+        'Email'              => 'string',
+        'Password'           => 'string',
+        'FaceBookID'         => 'string',
+        'IsProprietors'      => 'boolean',
+        'LanguageId'         => 'integer',
+        'OfficeID'           => 'integer',
+        'IncludeUnits'       => 'boolean',
+        'IncludedNotPublish' => 'boolean',
     ];
 }

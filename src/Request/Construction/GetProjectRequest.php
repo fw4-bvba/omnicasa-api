@@ -20,5 +20,8 @@ class GetProjectRequest extends Request
         'DisplayFields'                => ['string'],
         'LanguageId'                   => 'integer',
         'OfficeID'                     => 'integer',
+        'Goal'                         => 'integer',
+        'IncludeUnits'                 => 'boolean',
+        'IncludedNotPublish'           => 'boolean',
     ];
 }

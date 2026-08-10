@@ -11,5 +11,6 @@ class GetAppointmentObjectRequest extends Request
         'SiteIDs'    => ['integer'],
         'ObjectID'   => 'integer',
         'LanguageId' => 'integer',
+        'IsProject'  => 'boolean',
     ];
 }

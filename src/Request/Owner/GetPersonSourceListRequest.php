@@ -8,11 +8,13 @@ class GetPersonSourceListRequest extends Request
     const ENDPOINT = 'GetPersonSourceList';
 
     const PROPERTIES = [
-        'DisplayFields' => ['string'],
-        'SortFields'    => ['string'],
-        'Limit1'        => 'integer',
-        'Limit2'        => 'integer',
-        'LanguageId'    => 'integer',
-        'OfficeID'      => 'integer',
+        'DisplayFields'      => ['string'],
+        'SortFields'         => ['string'],
+        'Limit1'             => 'integer',
+        'Limit2'             => 'integer',
+        'LanguageId'         => 'integer',
+        'OfficeID'           => 'integer',
+        'IncludeUnits'       => 'boolean',
+        'IncludedNotPublish' => 'boolean',
     ];
 }

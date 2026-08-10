@@ -80,5 +80,7 @@ class GetPreviousNextOfPropertyRequest extends Request
         'RegionIds'                => ['integer'],
         'LanguageId'               => 'integer',
         'OfficeID'                 => 'integer',
+        'IncludeUnits'             => 'boolean',
+        'IncludedNotPublish'       => 'boolean',
     ];
 }

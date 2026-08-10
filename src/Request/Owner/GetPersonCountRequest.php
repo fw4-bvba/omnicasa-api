@@ -8,15 +8,17 @@ class GetPersonCountRequest extends Request
     const ENDPOINT = 'GetPersonCount';
 
     const PROPERTIES = [
-        'IDs'           => ['integer'],
-        'UserIDs'       => ['integer'],
-        'SiteIDs'       => ['integer'],
-        'CategoryIDs'   => ['integer'],
-        'StartDate'     => 'DateTime',
-        'EndDate'       => 'DateTime',
-        'ModifiedDate'  => 'DateTime',
+        'IDs'                             => ['integer'],
+        'UserIDs'                         => ['integer'],
+        'SiteIDs'                         => ['integer'],
+        'CategoryIDs'                     => ['integer'],
+        'StartDate'                       => 'DateTime',
+        'EndDate'                         => 'DateTime',
+        'ModifiedDate'                    => 'DateTime',
         'IsProprietorsOfActiveProperties' => 'boolean',
-        'LanguageId'    => 'integer',
-        'OfficeID'      => 'integer',
+        'LanguageId'                      => 'integer',
+        'OfficeID'                        => 'integer',
+        'IncludeUnits'                    => 'boolean',
+        'IncludedNotPublish'              => 'boolean',
     ];
 }

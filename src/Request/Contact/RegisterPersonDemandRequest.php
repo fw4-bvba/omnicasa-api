@@ -25,5 +25,8 @@ class RegisterPersonDemandRequest extends Request
         'IsReceivedEmail'         => 'boolean',
         'LanguageId'              => 'integer',
         'OfficeID'                => 'integer',
+        'IncludeUnits'            => 'boolean',
+        'IncludedNotPublish'      => 'boolean',
+        'ManagerId'               => 'integer',
     ];
 }

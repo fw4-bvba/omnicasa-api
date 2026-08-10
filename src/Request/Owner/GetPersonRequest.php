@@ -8,11 +8,13 @@ class GetPersonRequest extends Request
     const ENDPOINT = 'GetPerson';
 
     const PROPERTIES = [
-        'Email'         => 'string',
-        'Password'      => 'string',
-        'ID'            => 'integer',
-        'DisplayFields' => ['string'],
-        'LanguageId'    => 'integer',
-        'OfficeID'      => 'integer',
+        'Email'              => 'string',
+        'Password'           => 'string',
+        'ID'                 => 'integer',
+        'DisplayFields'      => ['string'],
+        'LanguageId'         => 'integer',
+        'OfficeID'           => 'integer',
+        'IncludeUnits'       => 'boolean',
+        'IncludedNotPublish' => 'boolean',
     ];
 }

@@ -13,5 +13,7 @@ class SaveChangedDemandListRequest extends Request
         'ChangedAndAddedDemands' => ['Omnicasa\Request\Contact\DemandEntry'],
         'LanguageId'             => 'integer',
         'OfficeID'               => 'integer',
+        'IncludeUnits'           => 'boolean',
+        'IncludedNotPublish'     => 'boolean',
     ];
 }

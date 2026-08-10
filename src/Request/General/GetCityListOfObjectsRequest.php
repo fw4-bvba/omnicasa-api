@@ -19,5 +19,8 @@ class GetCityListOfObjectsRequest extends Request
         'IsInCountryOrNot'   => 'boolean',
         'LanguageId'         => 'integer',
         'OfficeID'           => 'integer',
+        'IncludeUnits'       => 'boolean',
+        'IncludedNotPublish' => 'boolean',
+        'NeighbourhoodID'    => 'integer',
     ];
 }

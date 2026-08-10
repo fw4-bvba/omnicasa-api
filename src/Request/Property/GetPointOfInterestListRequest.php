@@ -8,11 +8,13 @@ class GetPointOfInterestListRequest extends Request
     const ENDPOINT = 'GetPointOfInterestList';
 
     const PROPERTIES = [
-        'DisplayFields'                => ['string'],
-        'SortFields'                   => ['string'],
-        'Limit1'                       => 'integer',
-        'Limit2'                       => 'integer',
-        'LanguageId'                   => 'integer',
-        'OfficeID'                     => 'integer',
+        'DisplayFields'      => ['string'],
+        'SortFields'         => ['string'],
+        'Limit1'             => 'integer',
+        'Limit2'             => 'integer',
+        'LanguageId'         => 'integer',
+        'OfficeID'           => 'integer',
+        'IncludeUnits'       => 'boolean',
+        'IncludedNotPublish' => 'boolean',
     ];
 }

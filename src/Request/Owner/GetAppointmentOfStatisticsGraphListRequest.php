@@ -18,5 +18,6 @@ class GetAppointmentOfStatisticsGraphListRequest extends Request
 		'IncludeUnits'       => 'boolean',
         'LanguageId'         => 'integer',
         'OfficeID'           => 'integer',
+        'IncludedNotPublish' => 'boolean',
     ];
 }
