@@ -8,14 +8,16 @@ class GetProjectPictureListRequest extends Request
     const ENDPOINT = 'GetProjectPictureList';
 
     const PROPERTIES = [
-        'IDs'           => ['integer'],
-        'ProjectID'     => 'integer',
-        'Type'          => 'integer',
-        'DisplayFields' => ['string'],
-        'SortFields'    => ['string'],
-        'Limit1'        => 'integer',
-        'Limit2'        => 'integer',
-        'LanguageId'    => 'integer',
-        'OfficeID'      => 'integer',
+        'IDs'                => ['integer'],
+        'ProjectID'          => 'integer',
+        'Type'               => 'integer',
+        'DisplayFields'      => ['string'],
+        'SortFields'         => ['string'],
+        'Limit1'             => 'integer',
+        'Limit2'             => 'integer',
+        'LanguageId'         => 'integer',
+        'OfficeID'           => 'integer',
+        'IncludeUnits'       => 'boolean',
+        'IncludedNotPublish' => 'boolean',
     ];
 }

@@ -8,8 +8,10 @@ class GetPersonRelationsRequest extends Request
     const ENDPOINT = 'GetPersonRelations';
 
     const PROPERTIES = [
-        'Email'         => 'string',
-        'LanguageId'    => 'integer',
-        'OfficeID'      => 'integer',
+        'Email'              => 'string',
+        'LanguageId'         => 'integer',
+        'OfficeID'           => 'integer',
+        'IncludeUnits'       => 'boolean',
+        'IncludedNotPublish' => 'boolean',
     ];
 }

@@ -8,13 +8,15 @@ class GetDemandPersonRequest extends Request
     const ENDPOINT = 'GetDemandPerson';
 
     const PROPERTIES = [
-        'ID'             => 'integer',
-        'DemandID'       => 'integer',
-        'IDCrypt'        => 'string',
-        'DemandIDCrypt'  => 'string',
-        'IsExpired'      => 'boolean',
-        'IsUnsubscribed' => 'boolean',
-        'LanguageId'     => 'integer',
-        'OfficeID'       => 'integer',
+        'ID'                 => 'integer',
+        'DemandID'           => 'integer',
+        'IDCrypt'            => 'string',
+        'DemandIDCrypt'      => 'string',
+        'IsExpired'          => 'boolean',
+        'IsUnsubscribed'     => 'boolean',
+        'LanguageId'         => 'integer',
+        'OfficeID'           => 'integer',
+        'IncludeUnits'       => 'boolean',
+        'IncludedNotPublish' => 'boolean',
     ];
 }

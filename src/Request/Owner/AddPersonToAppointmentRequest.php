@@ -8,9 +8,11 @@ class AddPersonToAppointmentRequest extends Request
     const ENDPOINT = 'AddPersonToAppointment';
 
     const PROPERTIES = [
-        'PersonID'      => 'integer',
-		'AppointmentID' => 'integer',
-        'LanguageId'    => 'integer',
-        'OfficeID'      => 'integer',
+        'PersonID'           => 'integer',
+		'AppointmentID'      => 'integer',
+        'LanguageId'         => 'integer',
+        'OfficeID'           => 'integer',
+        'IncludeUnits'       => 'boolean',
+        'IncludedNotPublish' => 'boolean',
     ];
 }

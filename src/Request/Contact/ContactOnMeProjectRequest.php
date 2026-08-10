@@ -54,5 +54,11 @@ class ContactOnMeProjectRequest extends Request
         'RegionIds'                => ['integer'],
         'LanguageId'               => 'integer',
         'OfficeID'                 => 'integer',
+        'IncludeUnits'             => 'boolean',
+        'IncludedNotPublish'       => 'boolean',
+        'ManagerId'                => 'integer',
+        'MarketingTracking'        => 'Omnicasa\Request\Contact\MarketingTrackingParameters',
+        'TaskComment'              => 'string',
+        'TaskTypeID'               => 'integer',
     ];
 }

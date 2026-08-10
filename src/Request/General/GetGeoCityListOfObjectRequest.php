@@ -14,5 +14,7 @@ class GetGeoCityListOfObjectRequest extends Request
         'StatusList'         => ['integer'],
         'LanguageId'         => 'integer',
         'OfficeID'           => 'integer',
+        'IncludeUnits'       => 'boolean',
+        'IncludedNotPublish' => 'boolean',
     ];
 }

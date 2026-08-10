@@ -8,10 +8,12 @@ class MakeRelationRequest extends Request
     const ENDPOINT = 'MakeRelation';
 
     const PROPERTIES = [
-        'PersonID'         => 'integer',
-        'PersonRelationID' => 'integer',
-        'RelationID'       => 'integer',
-        'LanguageId'       => 'integer',
-        'OfficeID'         => 'integer',
+        'PersonID'           => 'integer',
+        'PersonRelationID'   => 'integer',
+        'RelationID'         => 'integer',
+        'LanguageId'         => 'integer',
+        'OfficeID'           => 'integer',
+        'IncludeUnits'       => 'boolean',
+        'IncludedNotPublish' => 'boolean',
     ];
 }

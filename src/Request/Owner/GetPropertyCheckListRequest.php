@@ -8,12 +8,14 @@ class GetPropertyCheckListRequest extends Request
     const ENDPOINT = 'GetPropertyCheckList';
 
     const PROPERTIES = [
-        'ObjectID'      => 'integer',
-        'DisplayFields' => ['string'],
-        'SortFields'    => ['string'],
-        'Limit1'        => 'integer',
-        'Limit2'        => 'integer',
-        'LanguageId'    => 'integer',
-        'OfficeID'      => 'integer',
+        'ObjectID'           => 'integer',
+        'DisplayFields'      => ['string'],
+        'SortFields'         => ['string'],
+        'Limit1'             => 'integer',
+        'Limit2'             => 'integer',
+        'LanguageId'         => 'integer',
+        'OfficeID'           => 'integer',
+        'IncludeUnits'       => 'boolean',
+        'IncludedNotPublish' => 'boolean',
     ];
 }

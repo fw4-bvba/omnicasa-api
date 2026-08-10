@@ -8,9 +8,11 @@ class GetUserRequest extends Request
     const ENDPOINT = 'GetUser';
 
     const PROPERTIES = [
-        'ID'            => 'integer',
-        'DisplayFields' => ['string'],
-        'LanguageId'    => 'integer',
-        'OfficeID'      => 'integer',
+        'ID'                 => 'integer',
+        'DisplayFields'      => ['string'],
+        'LanguageId'         => 'integer',
+        'OfficeID'           => 'integer',
+        'IncludeUnits'       => 'boolean',
+        'IncludedNotPublish' => 'boolean',
     ];
 }

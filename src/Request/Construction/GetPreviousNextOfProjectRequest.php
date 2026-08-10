@@ -23,5 +23,16 @@ class GetPreviousNextOfProjectRequest extends Request
         'GPSSort'               => 'string',
         'LanguageId'            => 'integer',
         'OfficeID'              => 'integer',
+        'EncodePolygonPath'     => 'string',
+        'GeoCityIds'            => ['integer'],
+        'Goal'                  => 'integer',
+        'GpsAddress'            => 'string',
+        'GpsRadius'             => 'float',
+        'GpsX'                  => 'float',
+        'GpsY'                  => 'float',
+        'IncludeUnits'          => 'boolean',
+        'IncludedNotPublish'    => 'boolean',
+        'RegionIds'             => ['integer'],
+        'Zips'                  => ['string'],
     ];
 }

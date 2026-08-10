@@ -8,12 +8,14 @@ class GetRelatedPropertiesRequest extends Request
     const ENDPOINT = 'GetRelatedProperties';
 
     const PROPERTIES = [
-        'Email'         => 'string',
-        'DisplayFields' => ['string'],
-        'SortFields'    => ['string'],
-        'Limit1'        => 'integer',
-        'Limit2'        => 'integer',
-        'LanguageId'    => 'integer',
-        'OfficeID'      => 'integer',
+        'Email'              => 'string',
+        'DisplayFields'      => ['string'],
+        'SortFields'         => ['string'],
+        'Limit1'             => 'integer',
+        'Limit2'             => 'integer',
+        'LanguageId'         => 'integer',
+        'OfficeID'           => 'integer',
+        'IncludeUnits'       => 'boolean',
+        'IncludedNotPublish' => 'boolean',
     ];
 }

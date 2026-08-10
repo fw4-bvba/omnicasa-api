@@ -19,5 +19,7 @@ class GetCityListRequest extends Request
         'Limit2'                 => 'integer',
         'LanguageId'             => 'integer',
         'OfficeID'               => 'integer',
+        'IncludeUnits'           => 'boolean',
+        'IncludedNotPublish'     => 'boolean',
     ];
 }

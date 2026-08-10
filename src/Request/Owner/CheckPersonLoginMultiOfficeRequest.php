@@ -8,11 +8,13 @@ class CheckPersonLoginMultiOfficeRequest extends Request
     const ENDPOINT = 'CheckPersonLoginMultiOffice';
 
     const PROPERTIES = [
-        'Email'         => 'string',
-        'Password'      => 'string',
-        'FaceBookID'    => 'string',
-        'IsProprietors' => 'boolean',
-        'LanguageId'    => 'integer',
-        'OfficeID'      => 'integer',
+        'Email'              => 'string',
+        'Password'           => 'string',
+        'FaceBookID'         => 'string',
+        'IsProprietors'      => 'boolean',
+        'LanguageId'         => 'integer',
+        'OfficeID'           => 'integer',
+        'IncludeUnits'       => 'boolean',
+        'IncludedNotPublish' => 'boolean',
     ];
 }

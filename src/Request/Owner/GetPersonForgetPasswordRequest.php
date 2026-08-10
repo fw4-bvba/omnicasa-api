@@ -8,8 +8,10 @@ class GetPersonForgetPasswordRequest extends Request
     const ENDPOINT = 'GetPersonForgetPassword';
 
     const PROPERTIES = [
-        'Email'         => 'string',
-        'LanguageId'    => 'integer',
-        'OfficeID'      => 'integer',
+        'Email'              => 'string',
+        'LanguageId'         => 'integer',
+        'OfficeID'           => 'integer',
+        'IncludeUnits'       => 'boolean',
+        'IncludedNotPublish' => 'boolean',
     ];
 }

@@ -8,13 +8,15 @@ class GetCountProperties2Request extends Request
     const ENDPOINT = 'GetCountProperties2';
 
     const PROPERTIES = [
-        'ProjectStatusIds' => ['integer'],
-        'CountConditions'  => ['Omnicasa\Request\Property\CountPropertyCondition'],
-        'MainTypeIDs'      => ['integer'],
-        'GeoCityIds'       => ['integer'],
-        'RegionIds'        => ['integer'],
-        'LanguageId'       => 'integer',
-        'OfficeID'         => 'integer',
+        'ProjectStatusIds'   => ['integer'],
+        'CountConditions'    => ['Omnicasa\Request\Property\CountPropertyCondition'],
+        'MainTypeIDs'        => ['integer'],
+        'GeoCityIds'         => ['integer'],
+        'RegionIds'          => ['integer'],
+        'LanguageId'         => 'integer',
+        'OfficeID'           => 'integer',
+        'IncludeUnits'       => 'boolean',
+        'IncludedNotPublish' => 'boolean',
     ];
 
     public function addCondition(array $params)

@@ -165,6 +165,10 @@ abstract class RequestObject implements \JsonSerializable
             case 'boolean':
                 $value = !!$value;
                 break;
+            case 'object':
+                if (is_array($value)) $value = (object)$value;
+                else if (!is_object($value)) $value = null;
+                break;
             case 'DateTime':
                 if (is_string($value)) $value = strtotime($value);
                 if (is_int($value)) $value = new \DateTime('@' . $value);

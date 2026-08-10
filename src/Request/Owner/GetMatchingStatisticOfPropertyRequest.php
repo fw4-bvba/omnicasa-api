@@ -8,11 +8,12 @@ class GetMatchingStatisticOfPropertyRequest extends Request
     const ENDPOINT = 'GetMatchingStatisticOfProperty';
 
     const PROPERTIES = [
-        'ID'                => 'integer',
-        'ProjectID'         => 'integer',
-        'DisplayFields'     => ['string'],
-        'IncludeUnits'      => 'boolean',
-        'LanguageId'        => 'integer',
-        'OfficeID'          => 'integer',
+        'ID'                 => 'integer',
+        'ProjectID'          => 'integer',
+        'DisplayFields'      => ['string'],
+        'IncludeUnits'       => 'boolean',
+        'LanguageId'         => 'integer',
+        'OfficeID'           => 'integer',
+        'IncludedNotPublish' => 'boolean',
     ];
 }
