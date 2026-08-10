@@ -8,7 +8,7 @@ class GetWebIDListRequest extends Request
     const ENDPOINT = 'GetWebIDList';
 
     const PROPERTIES = [
-        'WebIDs'             => ['int'],
+        'WebIDs'             => ['integer'],
         'ForSale'            => 'boolean',
         'ForRent'            => 'boolean',
         'HasProperty'        => 'boolean',
