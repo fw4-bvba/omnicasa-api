@@ -9,7 +9,7 @@ class CreateTaskRequest extends Request
 
     const PROPERTIES = [
         'PersonID'               => 'integer',
-        'ObjectId'               => 'integer',
+        'ObjectID'               => 'integer',
         'DemandID'               => 'integer',
         'Subject'                => 'string',
         'Comment'                => 'string',
