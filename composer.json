@@ -19,7 +19,7 @@
         "psr-4": { "Omnicasa\\Tests\\": "tests/"}
     },
     "scripts": {
-        "test": "vendor/bin/phpunit tests/OmnicasaTest"
+        "test": "vendor/bin/phpunit"
     },
     "config": {
         "optimize-autoloader": true
