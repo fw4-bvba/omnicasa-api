@@ -5,7 +5,7 @@
     "keywords": ["omnicasa", "api", "sdk"],
     "license": "MIT",
     "require": {
-        "php": "^7.4|^8.0|^8.1|^8.2",
+        "php": "^8.0",
         "guzzlehttp/guzzle": "~6.0|~7.0",
         "ocramius/package-versions": "^2.1"
     },
@@ -19,7 +19,7 @@
         "psr-4": { "Omnicasa\\Tests\\": "tests/"}
     },
     "scripts": {
-        "test": "vendor/bin/phpunit tests/OmnicasaTest"
+        "test": "vendor/bin/phpunit"
     },
     "config": {
         "optimize-autoloader": true
