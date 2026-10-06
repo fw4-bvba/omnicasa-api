@@ -33,3 +33,17 @@ Properties on both requests and responses are implemented case insensitively. Fo
 ## Pagination
 
 When iterating over a response containing multiple objects, sequential pagination requests will automatically be sent in the background.
+
+To fetch one page explicitly (page numbers start at 1):
+
+```php
+$page = $client->getSiteList()->page(page: 1, perPage: 30);
+
+echo count($page);            // Number of sites on this page
+echo $page->getPage();        // 1
+echo $page->getPageSize();    // 30
+echo $page->getTotalCount();  // Number of sites across all pages
+echo $page->getPageCount();   // Total number of pages
+
+foreach ($page as $site) echo $site->id;
+```

@@ -8,6 +8,7 @@ use Omnicasa\Request\Request;
 final class TestApiAdapter extends ApiAdapter
 {
     protected $responseQueue = [];
+    public $requestedRanges = [];
 
     public function queueResponse(string $body)
     {
@@ -27,6 +28,9 @@ final class TestApiAdapter extends ApiAdapter
 
     public function getBody(Request $request): string
     {
+        if ($request->accepts('Limit1') && $request->accepts('Limit2')) {
+            $this->requestedRanges[] = [$request->limit1, $request->limit2];
+        }
         return array_shift($this->responseQueue) ?? '';
     }
 }
