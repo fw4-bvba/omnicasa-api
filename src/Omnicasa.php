@@ -178,11 +178,10 @@ final class Omnicasa
         return new ListResponseSimple($response);
     }
 
-    public function getUserList($params = []): ListResponseSimple
+    public function getUserList($params = []): ListResponsePaginated
     {
         $request = ($params instanceof GetUserListRequest) ? $params : new GetUserListRequest($params);
-        $response = $this->getApiAdapter()->request($request);
-        return new ListResponseSimple($response);
+        return new ListResponsePaginated($request, $this->getApiAdapter());
     }
 
     public function getUser($params): ?Response
