@@ -54,7 +54,7 @@ class DemandRegisterRequest extends Request
         'SourceId'                => 'integer',
         'Purpose'                 => 'integer',
         'IsReceivedEmail'         => 'boolean',
-        'Categories'              => 'string',
+        'Categories'              => ['integer'],
         'LanguageIdFromParameter' => 'integer',
         'EnvironmentIDs'          => ['integer'],
         'Fax'                     => 'string',
